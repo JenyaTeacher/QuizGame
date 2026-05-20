@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Quiz Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="hdr">
+    <span class="hdr-icon">🎓</span>
+    <span class="hdr-title">Quiz Game</span>
+  </div>
+
+  <div class="card">
+
+    <!-- КАТЕГОРІЇ -->
+    <div id="categories" class="screen">
+      <div class="section-label"><span>🌍</span>Географія</div>
+      <button class="cat-btn" onclick="selectCategory('flags')">
+        <span class="cat-icon">🏳️</span>
+        <span class="cat-text">
+          <span class="cat-name">Прапори</span>
+          <span class="cat-sub">Впізнай країну за прапором</span>
+        </span>
+      </button>
+      <button class="cat-btn" onclick="selectCategory('countries')">
+        <span class="cat-icon">🌎</span>
+        <span class="cat-text">
+          <span class="cat-name">Країни та столиці</span>
+          <span class="cat-sub">Столиці держав світу</span>
+        </span>
+      </button>
+
+      <div class="section-label" style="margin-top:4px"><span>🏺</span>Історія</div>
+      <button class="cat-btn" onclick="selectCategory('rulers')">
+        <span class="cat-icon">👑</span>
+        <span class="cat-text">
+          <span class="cat-name">Королі та правителі</span>
+          <span class="cat-sub">Хто і коли правив</span>
+        </span>
+      </button>
+      <button class="cat-btn" onclick="selectCategory('wars')">
+        <span class="cat-icon">⚔️</span>
+        <span class="cat-text">
+          <span class="cat-name">Битви і події</span>
+          <span class="cat-sub">Ключові моменти історії</span>
+        </span>
+      </button>
+    </div>
+
+    <!-- СКЛАДНІСТЬ -->
+    <div id="difficulty" class="screen hidden">
+      <button class="back-btn" onclick="goBack()">‹ Назад</button>
+      <div class="section-label"><span>⚡</span>Обери рівень</div>
+      <div class="diff-grid">
+        <button class="diff-btn easy" onclick="startGame('easy')">
+          <span class="d-icon">🟢</span>
+          <span class="d-name">Легка</span>
+          <span class="d-pts">×1 бал</span>
+        </button>
+        <button class="diff-btn medium" onclick="startGame('medium')">
+          <span class="d-icon">🟡</span>
+          <span class="d-name">Середня</span>
+          <span class="d-pts">×2 бали</span>
+        </button>
+        <button class="diff-btn hard" onclick="startGame('hard')">
+          <span class="d-icon">🔴</span>
+          <span class="d-name">Складна</span>
+          <span class="d-pts">×3 бали</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ГРА -->
+    <div id="quiz" class="screen hidden">
+      <div class="quiz-hud">
+        <div class="hud-prog">
+          <span class="hud-num" id="progress">1/5</span>
+          <div class="prog-bar-wrap"><div class="prog-bar-fill" id="progFill"></div></div>
+        </div>
+        <div class="hud-score">⭐ <span id="scoreLive">0</span></div>
+      </div>
+
+      <div class="q-row"><div class="q-icon">❓</div><div class="q-bubble" id="question-box"></div></div>
+
+      <div class="answers" id="answers"></div>
+
+      <div class="feedback-strip" id="feedback"></div>
+
+      <div class="avatar-bottom">
+        <img class="avatar-img-big" src="56.png" alt="">
+      </div>
+    </div>
+
+    <!-- РЕЗУЛЬТАТ -->
+    <div id="result" class="screen hidden">
+      <div class="result-inner">
+        <div class="result-emoji" id="resultEmoji">🏆</div>
+        <div class="result-label">Твій результат</div>
+        <div class="result-score" id="finalScore">0/5</div>
+        <div class="result-sub" id="resultSub"></div>
+        <div class="result-msg" id="resultMsg"></div>
+      </div>
+      <button class="cta-btn" onclick="restart()">Грати ще раз</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
